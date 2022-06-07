@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gitops-kubernetes-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gitops-kubernetes-dem0
+  template:
+    metadata:
+      labels:
+        app: gitops-kubernetes-dem0
+    spec:
+      containers:
+        - name: gitops-kubernetes-dem0
+          image: <image-name>:<tag>
+          ports:
+            - containerPort: 8080
